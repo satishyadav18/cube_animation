@@ -1,0 +1,112 @@
+
+
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+}
+
+
+.container{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+
+.cube{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    /* animation: cube 5s linear infinite; */
+    /* animation: cube 5s linear ease-in-out; */
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .container .cube {
+    animation: cube 5s linear infinite;
+}
+
+label {
+    display: inline-block;
+    background-color: green;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+label:hover{
+    background-color: yellow;
+    color: blueviolet;
+}
+label:active{
+    background-color: red;
+}
+
+@keyframes cube{
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.cube > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border: 2px solid white;
+    align-content: center;
+    text-align: center;
+}
+
+.front{
+    background-color: red;
+    transform: translateZ(100px);
+}
+
+.back{
+    background-color: yellowgreen;
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.left{
+    background-color: blueviolet;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.right{
+    background-color: dodgerblue;
+    transform:  rotateY(-90deg) translateZ(100px);
+}
+
+.top{
+    background-color: green;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom{
+    background-color: rgb(110, 68, 16);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+button{
+    background-color: green;
+    font-size: 20px;
+}

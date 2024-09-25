@@ -3,11 +3,12 @@
 
 
 body, html {
-    height: 100%;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: auto;
+    margin: 0;
     background-color: #333;
     color: #fff;
 }
@@ -17,7 +18,8 @@ body, html {
     width: 400px;
     height: 400px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
     align-items: center;
     perspective: 800px;
 }
@@ -30,6 +32,7 @@ body, html {
     /* animation: cube 5s linear infinite; */
     /* animation: cube 5s linear ease-in-out; */
 }
+
 
 input[type="checkbox"]{
     display: none;
@@ -45,7 +48,7 @@ label {
     font-size: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 120px;
     border-radius: 10px;
 }
 
@@ -54,7 +57,7 @@ label:hover{
     color: blueviolet;
 }
 label:active{
-    background-color: red;
+    background-color: rgb(234, 55, 24);
 }
 
 @keyframes cube{
@@ -72,8 +75,10 @@ label:active{
     height: 100%;
     opacity: 1;
     border: 2px solid white;
-    align-content: center;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }
 
 .front{
